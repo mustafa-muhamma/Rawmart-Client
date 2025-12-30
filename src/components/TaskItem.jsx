@@ -26,13 +26,13 @@ const TaskItem = ({ task, onEdit }) => {
             {/* Header & Status */}
             <div className="flex justify-between items-start mb-3">
                 <div className={`px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${task.status === 'done'
-                        ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                        : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
+                    ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                    : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
                     }`}>
                     {task.status}
                 </div>
 
-                <div className="flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="flex space-x-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">
                     <button
                         onClick={(e) => { e.stopPropagation(); onEdit(task); }}
                         className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition"
@@ -70,8 +70,8 @@ const TaskItem = ({ task, onEdit }) => {
                 <button
                     onClick={handleStatusToggle}
                     className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors duration-200 ${task.status === 'done'
-                            ? 'bg-green-50 text-green-600 hover:bg-green-100 dark:bg-green-900/20'
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
+                        ? 'bg-green-50 text-green-600 hover:bg-green-100 dark:bg-green-900/20'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
                         }`}
                 >
                     {task.status === 'done' ? (
